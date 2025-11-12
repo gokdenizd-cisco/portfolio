@@ -1,0 +1,678 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* Couleur accent du logo GIT */
+:root {
+  --accent: #e30613;
+}
+
+/* ==================== HEADER - CENTRAGE PARFAIT ==================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 1.2rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: relative; /* Pour le positionnement absolu du nom */
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 48px;
+  width: auto;
+}
+
+/* NOM CENTRÉ AU MILIEU */
+.name {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* MENU À DROITE */
+.menu {
+  display: flex;
+  gap: 2.2rem;
+  flex-shrink: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1.5px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--accent);
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* HAMBURGER (mobile) */
+.menu-toggle {
+  display: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 0.8rem;
+  border: 1.5px solid #000;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  color: #000;
+}
+
+.menu-toggle:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* MENU MOBILE */
+.mobile-menu {
+  position: fixed;
+  top: 78px;
+  right: 0;
+  background: white;
+  width: 220px;
+  padding: 1.5rem;
+  box-shadow: -2px 4px 15px rgba(0, 0, 0, 0.08);
+  display: none;
+  flex-direction: column;
+  gap: 1.2rem;
+  border-radius: 0 0 0 12px;
+  border-left: 1px solid #eee;
+  z-index: 999;
+}
+
+.mobile-menu.show {
+  display: flex;
+}
+
+.mobile-menu a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  transition: color 0.3s;
+}
+
+.mobile-menu a:hover {
+  color: var(--accent);
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 1.5rem;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .name {
+    font-size: 1.2rem;
+  }
+}
+/* ==================== MAIN ==================== */
+main {
+  margin-top: 100px;
+  padding: 3rem 2.5rem;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  margin-bottom: 5rem;
+}
+
+.section h2 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.8px;
+  position: relative;
+  display: inline-block;
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 50px;
+  height: 3px;
+  background: var(--accent);
+}
+
+/* ==================== À PROPOS - UN SEUL BLOC ==================== */
+.about-single {
+  margin-top: 1.8rem;
+}
+
+.about-content {
+  background: #ffffff;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 14px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.about-content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+  border-color: var(--accent);
+}
+
+.about-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 1.6rem 0 0.8rem;
+  letter-spacing: -0.5px;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.about-content h3:first-child {
+  margin-top: 0;
+}
+
+.about-content h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 36px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.about-content p {
+  font-size: 1.02rem;
+  color: #333;
+  line-height: 1.75;
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==================== COMPÉTENCES - GRILLE PRINCIPALE (4 BLOCS) ==================== */
+.skills-grid-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+  margin-top: 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ==================== LINUX - SEUL EN DESSOUS ==================== */
+.skills-grid-linux {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 600px));
+  justify-content: center;
+  gap: 1.8rem;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+/* BLOC UNIFORME */
+.skill-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #ffffff;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 1.6rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  height: 100%;
+}
+
+.skill-block:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent);
+}
+
+.skill-block h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.skill-block h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 36px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px dashed #eee;
+}
+
+.skill-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.skill-title {
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.skill-details {
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* ==================== PROJETS - CARTES CLIQUABLES ==================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1.8rem;
+}
+
+.project-card {
+  display: block;
+  background: #ffffff;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-title {
+  padding: 1.2rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #1a1a1a;
+  text-align: center;
+  background: #fafafa;
+  border-top: 1px solid #eee;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-title {
+  color: var(--accent);
+}
+
+/* ==================== CONTACT ==================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.8rem;
+  margin-top: 1.8rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #fafafa;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent);
+}
+
+.contact-icon {
+  font-size: 1.6rem;
+  margin-top: 0.2rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.contact-item strong {
+  font-weight: 600;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.contact-item a {
+  font-size: 1.05rem;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: var(--accent);
+}
+
+/* ==================== PAGE PROJET ==================== */
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #666;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.project-details {
+  background: #ffffff;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 14px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.project-details:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+  border-color: var(--accent);
+}
+
+.project-details h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 1.8rem 0 1rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.project-details h2:first-child {
+  margin-top: 0;
+}
+
+.project-details h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.project-details p {
+  margin-bottom: 1.2rem;
+  line-height: 1.75;
+  color: #333;
+}
+
+.project-details ul {
+  padding-left: 1.4rem;
+  margin: 1rem 0;
+}
+
+.project-details li {
+  margin: 0.6rem 0;
+  position: relative;
+  color: #333;
+}
+
+.project-details li::before {
+  content: '→';
+  color: var(--accent);
+  font-weight: bold;
+  position: absolute;
+  left: -1.4rem;
+}
+
+/* ==================== LIENS GÉNÉRAUX ==================== */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 1.5rem;
+  }
+  .menu {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .name {
+    font-size: 1.2rem;
+  }
+  main {
+    padding: 2rem 1.5rem;
+    margin-top: 90px;
+  }
+  .section h2 {
+    font-size: 1.8rem;
+  }
+  .skills-grid-main,
+  .skills-grid-linux {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+  .skill-block,
+  .about-content,
+  .project-card,
+  .contact-item,
+  .project-details {
+    padding: 1.4rem;
+  }
+  .project-card img {
+    height: 180px;
+  }
+}
+
+/* ==================== CONTACT - GRILLE PARFAITE 2×3 ==================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1.8rem;
+  justify-content: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cartes contact */
+.contact-item {
+  background: #fafafa;
+  border: 1.5px solid #eee;
+  border-radius: 14px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  height: fit-content;
+}
+
+.contact-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.contact-icon {
+  font-size: 1.6rem;
+  color: var(--accent);
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.contact-item strong {
+  font-weight: 600;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.contact-item a {
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-item a:hover {
+  color: var(--accent);
+}
+
+/* ==================== BOUTONS TÉLÉCHARGEMENT ==================== */
+.download-item {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: white !important;
+  padding: 0.75rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 0.8rem;
+  box-shadow: 0 3px 10px rgba(227, 6, 19, 0.25);
+  width: 100%;
+  text-align: center;
+}
+
+.download-btn:hover {
+  background: #c40511;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(227, 6, 19, 0.35);
+}
+
+.download-btn::before {
+  content: "Télécharger";
+  font-size: 1.1rem;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    padding: 0 1rem;
+  }
+  .contact-item,
+  .download-btn {
+    padding: 1.4rem;
+  }
+}
+

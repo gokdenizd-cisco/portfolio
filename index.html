@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Demirci Gokdeniz - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="images/GIT.png" alt="Geneva Institute of Technology">
+    </div>
+    <div class="name">Demirci Gokdeniz</div>
+    
+    <!-- Hamburger -->
+    <div class="menu-toggle">Menu</div>
+    
+    <!-- Menu Desktop -->
+    <nav class="menu">
+      <a href="#apropos">À propos</a>
+      <a href="#competences">Compétences</a>
+      <a href="#projets">Projets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Menu Mobile -->
+  <div class="mobile-menu">
+    <a href="#apropos">À propos</a>
+    <a href="#competences">Compétences</a>
+    <a href="#projets">Projets</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Contenu -->
+  <main>
+   <!-- À PROPOS -->
+<section id="apropos" class="section">
+  <h2>À propos</h2>
+  <div class="about-single">
+    <div class="about-content">
+      <h3>Formation & Objectif</h3>
+      <p>
+        Actuellement en <strong>CFC Informatique (Exploitation & Infrastructure)</strong> au <strong>Geneva Institute of Technology</strong>, je me spécialise dans les <strong>réseaux et les systèmes</strong>.<br>
+      </p>
+
+      <h3>Parcours & Curiosité</h3>
+      <p>
+        Mon parcours a commencé dès <strong>l’école primaire</strong>, en résolvant seul les petits dysfonctionnements du quotidien : télévision qui ne capte plus, téléphone bloqué, console déconnectée, Wi-Fi instable…<br>
+        À <strong>14 ans</strong>, j’ai fait mes premiers pas dans le réseau en changeant le <strong>nom et le mot de passe de ma box internet</strong>.
+      </p>
+
+      <h3>Motivation Actuelle</h3>
+      <p>
+        Depuis, cette <strong>soif de comprendre</strong> ne m’a jamais quitté. Je me suis toujours demandé comment les machines sont interconnectées, quelles pièces composent un ordinateur, pourquoi elles sont nécessaires et comment les assembler.<br>
+        C’est cette même curiosité qui me porte aujourd’hui : j’aime <strong>confronter des défis</strong> et voir chaque problème comme un <strong>puzzle à résoudre</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+   <!-- === SECTION COMPÉTENCES === -->
+<section id="competences" class="section">
+  <h2>Compétences</h2>
+
+  <!-- GRILLE PRINCIPALE (4 blocs) -->
+  <div class="skills-grid-main">
+    <!-- RÉSEAU -->
+    <div class="skill-block">
+      <h3>Réseau</h3>
+      <div class="skill-item">
+        <span class="skill-title">OPNsense</span>
+        <span class="skill-details">Configuration VPN, DHCP, VLANs, Firewall</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-title">GNS3</span>
+        <span class="skill-details">Simulation réseau avec routeurs & switchs Cisco</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-title">Protocoles & Services</span>
+        <span class="skill-details">VLANs, Access/Trunk, DHCP, NAT, Spanning-Tree, EtherChannel, RIP, EIGRP, OSPF</span>
+      </div>
+    </div>
+
+    <!-- VIRTUALISATION -->
+    <div class="skill-block">
+      <h3>Virtualisation</h3>
+      <div class="skill-item">
+        <span class="skill-title">VMware</span>
+        <span class="skill-details">Création de VM, interconnexion réseau</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-title">Proxmox</span>
+        <span class="skill-details">Cluster HA sur 3 nœuds, gestion multi-VM</span>
+      </div>
+    </div>
+
+    <!-- SAUVEGARDE -->
+    <div class="skill-block">
+      <h3>Sauvegarde & Restauration</h3>
+      <div class="skill-item">
+        <span class="skill-title">Outils</span>
+        <span class="skill-details">Windows Backup, Acronis (planification)</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-title">Stratégies</span>
+        <span class="skill-details">Sauvegarde complète, incrémentielle, différentielle</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-title">Restauration</span>
+        <span class="skill-details">Récupération complète de données</span>
+      </div>
+    </div>
+
+    <!-- WINDOWS SERVER -->
+    <div class="skill-block">
+      <h3>Windows Server</h3>
+      <div class="skill-item">
+        <span class="skill-title">Services</span>
+        <span class="skill-details">DNS, DHCP, Windows Backup</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINUX SEUL EN DESSOUS -->
+  <div class="skills-grid-linux">
+    <div class="skill-block">
+      <h3>Linux</h3>
+      <div class="skill-item">
+        <span class="skill-title">Système & Terminal</span>
+        <span class="skill-details">Maîtrise des commandes de base (ls, cd, grep, chmod, find, etc.)</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-title">Gestion de paquets</span>
+        <span class="skill-details">Installation & mise à jour via <strong>apt</strong> (Ubuntu)</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-title">Réseau</span>
+        <span class="skill-details">Configuration IP statique, DHCP client/serveur, ping, traceroute</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-title">Services & Sécurité</span>
+        <span class="skill-details">Gestion via <strong>systemctl</strong>, configuration SSH</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETS -->
+<section id="projets" class="section">
+  <h2>Projets</h2>
+  <div class="projects-grid">
+    <a href="projets/projet1.html" class="project-card">
+      <img src="images/hackathon_banner.png" alt="Hackathon - Réseau Satcom">
+      <div class="project-title">Hackathon</div>
+    </a>
+    <!-- Ajoute d'autres projets ici -->
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Informations personnels</h2>
+  <div class="contact-grid">
+
+    <!-- Email -->
+    <div class="contact-item">
+      <span class="contact-icon">Mail</span>
+      <div>
+        <a href="mailto:gokdeniz.d@icloud.com">gokdeniz.d@icloud.com</a>
+      </div>
+    </div>
+
+    <!-- Téléphone -->
+    <div class="contact-item">
+      <span class="contact-icon">Téléhone</span>
+      <div>
+        <a href="tel:+41783412550">+41 78 341 25 50</a>
+      </div>
+    </div>
+
+    <!-- CV -->
+    <div class="contact-item download-item">
+      <span class="contact-icon">CV</span>
+      <div>
+        <a href="documents/CV_Gokdeniz_DEMIRCI.pdf" download class="download-btn">
+         mon CV
+        </a>
+      </div>
+    </div>
+
+    <!-- Bulletin -->
+    <div class="contact-item download-item">
+      <span class="contact-icon">Bulletin</span>
+      <div>
+        <a href="documents/Bulletin_E1_CFC.pdf" download class="download-btn">
+         le bulletin
+        </a>
+      </div>
+    </div>
+
+    <!-- Test GRI -->
+    <div class="contact-item download-item">
+      <span class="contact-icon">Test</span>
+      <div>
+        <a href="documents/Test_GRI_2024.pdf" download class="download-btn">
+         le test GRI
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+  </main>
+
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
